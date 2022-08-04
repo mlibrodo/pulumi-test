@@ -27,19 +27,19 @@ export const defaultInstance = new aws.rds.Instance("default", {
     publiclyAccessible: true,
 })
 
-export const securityGroupId = defaultInstance.vpcSecurityGroupIds[0].apply(
-    (t:string) => { return getSecurityGroup({id: t})}
-)
-
-
-
-export const securityGroupRule = securityGroupId.apply((id) => {
-    new aws.ec2.SecurityGroupRule("example", {
-        type: "ingress",
-        fromPort: 5432,
-        toPort: 5432,
-        protocol: "tcp",
-        cidrBlocks: ["0.0.0.0/0"],
-        securityGroupId: id.id,
-    })
-})
+// export const securityGroupId = defaultInstance.vpcSecurityGroupIds[0].apply(
+//     (t:string) => { return getSecurityGroup({id: t})}
+// )
+//
+//
+//
+// export const securityGroupRule = securityGroupId.apply((id) => {
+//     new aws.ec2.SecurityGroupRule("example", {
+//         type: "ingress",
+//         fromPort: 5432,
+//         toPort: 5432,
+//         protocol: "tcp",
+//         cidrBlocks: ["0.0.0.0/0"],
+//         securityGroupId: id.id,
+//     })
+// })
