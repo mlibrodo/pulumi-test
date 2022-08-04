@@ -1,0 +1,4 @@
+config:
+  airflow:dbPassword:
+    secure: AAABANS+5W0WHP8T9FBzZY6r0Jq8kiiYLjf2v18Cw/b7oEkO7jSew59VbIA5euo=
+  aws:profile: root@librodo-naro
